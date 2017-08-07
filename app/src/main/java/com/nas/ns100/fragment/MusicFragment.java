@@ -1,4 +1,4 @@
-package com.nas.ns100;
+package com.nas.ns100.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nas.ns100.R;
+
 /**
- * Created by yijian2033 on 2017/8/6.
+ *
  */
 
-public class GameFragment extends Fragment {
+public class MusicFragment extends Fragment {
 
     private View inflate;
     private TextView mTextView;
@@ -32,10 +34,10 @@ public class GameFragment extends Fragment {
         mTextView.setText(getArguments().getString("JOHN"));
     }
 
-    public static GameFragment newInstant(String tv) {
+    public static MusicFragment newInstant(String tv) {
         Bundle bundle = new Bundle();
         bundle.putString("JOHN", tv);
-        GameFragment homeFragment = new GameFragment();
+        MusicFragment homeFragment = new MusicFragment();
         homeFragment.setArguments(bundle);
         return homeFragment;
     }
