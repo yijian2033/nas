@@ -1,5 +1,6 @@
 package com.nas.ns100;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,10 +13,12 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.nas.ns100.fragment.BookFragment;
 import com.nas.ns100.fragment.DeviceFragment;
+import com.nas.ns100.fragment.FileFragment;
 import com.nas.ns100.fragment.GameFragment;
 import com.nas.ns100.fragment.HomeFragment;
 import com.nas.ns100.fragment.MovieFragment;
 import com.nas.ns100.fragment.MusicFragment;
+import com.nas.ns100.server.UdpReceiverService;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         fragmentManager = getSupportFragmentManager();
         setDefaultFragment();
         navigationBar.setTabSelectedListener(this);
+
+//        startService(new Intent(MainActivity.this, UdpReceiverService.class));
     }
 
     private void setDefaultFragment() {
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
         fragmentArrayList.add(HomeFragment.newInstant("首页"));
         fragmentArrayList.add(new DeviceFragment());
-        fragmentArrayList.add(BookFragment.newInstant("文件"));
+        fragmentArrayList.add(new FileFragment());
         fragmentArrayList.add(MusicFragment.newInstant("我的"));
         fragmentArrayList.add(GameFragment.newInstant("games"));
         return fragmentArrayList;

@@ -37,7 +37,7 @@ public class DeviceFragment extends Fragment {
     private EditText mEtEditMsg;
     private Button mBtSendMsg;
 
-    private static final String HOST = "192.168.1.55";
+    private static final String HOST = "192.168.1.64";
     private static final int PORT = 9999;
     private Socket socket = null;
     private BufferedReader in = null;
@@ -59,7 +59,7 @@ public class DeviceFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        intData();
+//        intData();
     }
 
     private void intData() {
